@@ -1,5 +1,3 @@
-#“Can we predict a country's COVID-19 death rate per million using its case rate, vaccination progress, and testing strategy?”
-
 import pandas as pd
 
 file_path = r"C:\Users\mouna\OneDrive\Desktop\CovidData.csv"
@@ -29,7 +27,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-# Prepare your data
+# Prepare the data
 X = df_model[features]
 y = df_model['total_deaths_per_million']
 
@@ -40,7 +38,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# Prediction (this is the missing line!)
 y_pred = model.predict(X_test)
 
 # Evaluation
@@ -59,7 +56,6 @@ plt.ylabel("Predicted Deaths per Million")
 plt.title("Model Predictions vs Actual")
 plt.grid(True)
 plt.show()
-
 
 from sklearn.ensemble import RandomForestRegressor
 
